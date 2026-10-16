@@ -1,6 +1,6 @@
 # Global Genomics & Scientific Tools Analysis (NCBI SRA)
 
-![Dashboard Preview](ruta_de_tu_imagen_o_captura_aqui.png)
+![Dashboard Preview](https://github.com/AbiOsorioZ/Portafolio-Gen-mica-SQL-/blob/main/genomic_tools_analysis.png)
 
 ## Project Overview
 Exploratory data analysis of the Sequence Read Archive (SRA) from NCBI, the world's largest public repository for genomic sequencing data. This project bridges biotechnology and data analytics by extracting, cleaning, and querying large-scale datasets via Google BigQuery to uncover global trends in research investments, sequencing technologies, and dominant organisms.
