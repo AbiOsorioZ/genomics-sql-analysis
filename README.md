@@ -1,44 +1,31 @@
-Descripción del proyecto
+# Global Genomics & Scientific Tools Analysis (NCBI SRA)
 
-Análisis exploratorio del Sequence Read Archive (SRA) de NCBI, la base de datos pública más grande del mundo de secuenciación genómica. El objetivo fue responder preguntas reales sobre tendencias en investigación genómica global como qué organismos se secuencian más, qué técnicas y plataformas dominan, y cómo ha evolucionado el volumen de datos a lo largo del tiempo.
+![Dashboard Preview](ruta_de_tu_imagen_o_captura_aqui.png)
 
-Herramientas
-SQL (Google BigQuery)
-Dataset: nih-sra-datastore.sra.metadata
+## Project Overview
+Exploratory data analysis of the Sequence Read Archive (SRA) from NCBI, the world's largest public repository for genomic sequencing data. This project bridges biotechnology and data analytics by extracting, cleaning, and querying large-scale datasets via Google BigQuery to uncover global trends in research investments, sequencing technologies, and dominant organisms.
 
-Preguntas y hallazgos
-1. ¿Cuáles son los organismos más secuenciados?
-ver 01_organismos_mas_secuenciados.sql
+## Key Questions Explored
+* **What are the most heavily sequenced organisms?** See [01_organismos_mas_secuenciados.sql](01_organismos_mas_secuenciados.sql)
+* **What are the most commonly used assay/sequencing types?** See [02_tecnica_mas_utilizada.sql](02_tecnica_mas_utilizada.sql)
+* **Which sequencing platforms dominate the industry?** See [03_plataformas_secuenciacion.sql](03_plataformas_secuenciacion.sql)
+* **Which countries generate the highest volume of genomic data?** See [04_pais_mas_datos.sql](04_pais_mas_datos.sql)
+* **How has the volume of sequencing data evolved over time?** See [05_evolucion_volumen.sql](05_evolucion_volumen.sql)
+* **Which bioprojects have the largest associated sample sizes?** See [06_bioproyectos_top.sql](06_bioproyectos_top.sql)
 
-Hallazgo: Homo sapiens lidera con ~8.2M de registros, seguido muy de cerca por SARS-CoV-2 (~7.6M), reflejo del trabajo global de investigación genómica durante la pandemia. Mus musculus (ratón) ocupa el tercer lugar (~4.3M) como organismo modelo en investigación, seguido de varios metagenomas ambientales.
+## Tools & Technologies
+* **Google BigQuery & SQL:** Data extraction, querying, and exploratory data analysis using public datasets (`nih-sra-datastore.sra.metadata`).
+* **Power BI:** Interactive data visualization and dashboard design for executive reporting.
+* **Domain Knowledge:** Applied biotechnology, genomics, NGS (Next-Generation Sequencing) platforms, and public health data interpretation.
 
-2. ¿Qué técnicas de secuenciación son las más usadas?
-ver 2. Tecnica más utilizada.sql
+## Key Findings
+* **The Illumina Monopoly:** Illumina leads global sequencing with ~39.6M records—nearly 36 times more than its closest competitor, Oxford Nanopore (~1.1M), proving its status as the absolute industry standard for NGS.
+* **Pandemic Impact on Research:** Global sequencing volume experienced a steep, sustained surge peaking in 2022 (~6.5M records), heavily driven by COVID-19 genomic surveillance (such as the COG-UK consortium dataset).
+* **Top Organisms & Techniques:** *Homo sapiens* leads sequencing volume (~8.2M records), closely followed by SARS-CoV-2 (~7.6M). Amplicon sequencing dominates diagnostic and targeted applications (~18M records).
+* **Geographic Concentration:** Genomic research investment and data generation remain heavily centralized in a few high-income countries, primarily the United States and the United Kingdom.
 
-Hallazgo: AMPLICON domina con ~18M de registros (técnica dirigida usada en diagnóstico e identificación de microorganismos), seguido de WGS/Whole Genome Sequencing (~9.2M) y RNA-Seq (~8.6M, análisis de expresión génica).
+## Dashboard & Interactive Visualizations
+The interactive Power BI dashboard integrates yearly evolution trends, platform market share, and top organism distributions into a clean, executive one-pager designed for quick technical assessment.
 
-3. ¿Qué plataformas de secuenciación dominan?
-ver 3.Plataformas de secuenciacion.sql
-
-Hallazgo: Illumina domina con ~39.6M de registros — casi 36 veces más que su competidor más cercano, Oxford Nanopore (~1.1M). Esto nos habla de que Illumina se utiliza como el estándar de la industria en secuenciación de nueva generación, mientras que tecnologías más nuevas (Nanopore, PacBio) apenas empiezan a ganar terreno.
-
-4. ¿Qué países generan más datos de secuenciación?
-ver 4.País con más datos generados.sql
-
-Hallazgo: Estados Unidos lidera con ~9.3M de registros, seguido de Reino Unido (~3.6M) y China (~3.5M). Un volumen considerable de registros (~6M) no tiene el país identificado ("uncalculated"). 
-
-5. ¿Cómo ha evolucionado el volumen de secuenciación por año?
-ver 5.Evolución del volumen de secuenciación.sql
-
-Hallazgo: Crecimiento sostenido con un pico marcado en 2022 (~6.5M registros), coincidiendo con la época del COVID-19. Los años posteriores (2023-2026) muestran una ligera estabilización, manteniéndose por encima de los 3.9M registros anuales, demostrando que es algo que llego a evolucionar diferentes áreas de la ciencia y se mantiene en uso
-
-6. ¿Cuáles son los bioproyectos con más muestras asociadas?
-ver 6.Bioproyectos con más muestras.sql
-
-Hallazgo: El bioproyecto PRJEB37886 domina por mucho margen con 2.7M de registros muy por encima del segundo lugar  (PRJNA716984, ~590K). Dada la cantidad de investigación de este proyecto quise investigar acerca de él, encontrándome con que fue un proyecto del consorcio COG-UK (COVID-19 Genomics UK Consortium), correspondiente al Reino Unido para secuenciación de SARS-CoV-2. Este dataset agrupa un total de 27,485 casos de COVID-19, donde el ARN viral de SARS-CoV-2 fue secuenciado usando la técnica de Amplicón. Esto se relaciona con las técnicas más utilizadas que tiene sentido al ver la cantidad de datos que se empezó a generar durante la época del COVID-19
-
-Conclusiones 
-La pandemia de COVID-19 fue un acelerador para la investigación de datos genómicos a nivel mundial, tanto en volumen como en técnica (AMPLICON, pruebas diagnósticas masivas). Illumina se mantiene como el estándar de la industria, y la investigación genómica sigue concentrada geográficamente en pocos países (EE.UU., Reino Unido, China), lo cual abre preguntas sobre equidad y acceso a estas tecnologías a nivel global.
-
-Abigail Osorio 
-abiosorioz.@gmail.com
+---
+**Author:** Abigail Osorio ([abiosorioz.04@gmail.com](mailto:abiosorioz.04@gmail.com))
